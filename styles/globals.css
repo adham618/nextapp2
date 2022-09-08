@@ -1,0 +1,1005 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Readex+Pro:wght@300;400;500;600;700&display=swap");
+@import url("http://fonts.cdnfonts.com/css/gang-of-three");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@font-face {
+  /* font-family: "Fengardo Neue"; */
+  font-family: "Gang of Three", sans-serif;
+  /* src: url("/fonts/FengardoNeue_Black.otf"); */
+  src: url("/fonts/go3v2.ttf");
+}
+/*========================================
+VARIABLES
+========================================*/
+:root {
+  --main-color: #000;
+}
+
+/* #__next{
+  max-width: 100rem;
+  width:90%;
+  margin:auto
+  } */
+#__next {
+  max-width: 100%;
+  overflow: hidden;
+}
+fixage {
+  max-width: 100rem;
+  width: 90%;
+  margin: auto;
+}
+
+/*========================================
+GENERAL STYLING & UTILITIES
+========================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Readex Pro", sans-serif; */
+  font-family: "Gang of Three", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  color: #e5e5e5;
+  background-color: var(--main-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.page-container {
+  max-width: min(calc(100% - 2rem), 90vw);
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/*========================================
+HEADER
+========================================*/
+.logo {
+  width: 211px;
+  height: 88px;
+  position: relative;
+  background-image: url("/imgs/hapulogo.png");
+  background-repeat: no-repeat;
+  padding: 0px;
+  background-size: contain;
+  max-width: 80%;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-container,
+nav ul,
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-list-item {
+  padding: 0.2rem 0.625rem;
+  border: 1px solid #ffffff20;
+  background-color: #ffffff20;
+  border-radius: 4px;
+}
+
+.nav-list-item:hover {
+  cursor: pointer;
+  border-color: transparent;
+  background-color: white;
+}
+
+.nav-list-item:hover a {
+  color: var(--main-color);
+}
+
+.nav-list-item.selected {
+  border-color: transparent;
+  background-color: white;
+}
+
+.nav-list-item.selected a {
+  color: var(--main-color);
+}
+
+.social-icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  padding: 0.2rem 0.2rem;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+  border-radius: 4px;
+  fill: var(--main-color);
+  border-color: transparent;
+  background-color: white;
+}
+
+#menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.menu-button a {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Poppins";
+  border: 1px solid #e5e5e5;
+  padding: 10px 16px 10px;
+  color: #e5e5e5;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.menu-button a:hover {
+  color: #000;
+  background: #e5e5e5;
+}
+/* ================================
+RESPONSIVE LINKS
+================================ */
+@media screen and (max-width: 1000px) {
+  .nav-container {
+    position: absolute;
+    display: initial;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    background-color: #000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    z-index: 100;
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+
+  nav ul {
+    display: initial;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-list-item {
+    margin-block: 1rem;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+}
+
+.show-menu {
+  /* top: 4.5rem; */
+  top: 7rem;
+}
+
+/* ================================
+HERO STYLING
+================================ */
+.hero {
+  min-height: 70vh;
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url("/imgs/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border: 1px solid white; */
+}
+
+.hero-content {
+  padding: 2rem;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  /* font-family: "Fengardo Neue", sans-serif; */
+  font-family: "Gang of Three", sans-serif;
+  margin-block: 1rem;
+}
+
+.hero-content p {
+  max-width: 25rem;
+}
+
+/* Okay-styles */
+.img-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  max-width: 500px;
+}
+
+.img-container {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.img-group .overlay-img {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  margin-right: 0px;
+  padding-right: 0px;
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+
+.img-group .overlay-img:hover {
+  opacity: 0;
+}
+
+/* ================================
+ABOUT STYLING
+=================================*/
+.about {
+  padding-block: 8rem;
+  text-align: center;
+}
+
+.about-content h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  /* font-family: "Fengardo Neue", sans-serif; */
+  font-family: "Gang of Three", sans-serif;
+  margin-block: 1rem;
+}
+
+.about-content .about-img {
+  width: 60%;
+  margin-block: 2rem;
+}
+
+.about-content p {
+  max-width: 60rem;
+  margin-inline: auto;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+/* ================================
+MARK STYLING
+=================================*/
+.mark {
+  padding-block: 8rem;
+  text-align: center;
+  background-color: white;
+}
+
+.mark-content h1 {
+  color: var(--main-color);
+  font-size: 5rem;
+  text-transform: uppercase;
+  /* font-family: "Fengardo Neue", sans-serif; */
+  font-family: "Gang of Three", sans-serif;
+  margin-block: 1rem;
+}
+
+.mark-content h3 {
+  color: var(--main-color);
+}
+
+.mark-content .mark-img {
+  width: 60%;
+  margin-block: 2rem;
+}
+
+.mark-content p {
+  color: var(--main-color);
+  max-width: 60rem;
+  margin-inline: auto;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+/* ================================
+MINT STYLING
+=================================*/
+.mint {
+  margin-block: 8rem;
+}
+
+.mint-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
+}
+
+.mint-grid > div {
+  flex: 1 1 40%;
+  min-width: 20rem;
+}
+
+.mint-content h2 {
+  font-size: 2.5rem;
+}
+
+.mint-content p {
+  margin-block: 2rem;
+  padding-right: 8rem;
+  line-height: 1.5rem;
+}
+
+.connect-wallet-btn {
+  padding: 0.625rem 1.2rem;
+  color: white;
+  border: 1px solid #ffffff20;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.connect-wallet-input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  padding: 0.625rem 1rem;
+  color: #e5e5e5;
+  border: 1px solid #ffffff20;
+  background-color: #ffffff20;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.connect-wallet-btn:hover {
+  cursor: pointer;
+  border-color: transparent;
+  background-color: #e5e5e5;
+  color: var(--main-color);
+}
+
+.mint-img-container {
+  position: relative;
+  width: 90%;
+  max-width: 76rem;
+  margin: auto;
+  height: 35rem;
+  background-image: url("/imgs/nfts.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}
+
+/* ================================
+BUY STYLING
+=================================*/
+.buy {
+  margin-block: 8rem;
+  color: var(--main-color);
+
+  padding-block: 8rem;
+  background-color: white;
+}
+
+.buy-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.buy-content h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  margin: 2em;
+}
+
+.eth-mainnet-container {
+  display: flex;
+  justify-content: center;
+}
+
+.eth-mainnet-container > div {
+  display: inline-block;
+  min-width: 25rem;
+  background-color: var(--main-color);
+  color: #e5e5e5;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.eth-mainnet {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.eth-mainnet h3 {
+  margin-bottom: 0.5rem;
+}
+
+.eth-mainnet p {
+  color: #bbb;
+}
+
+.eth-mainnet span {
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #e5e5e5;
+  background-color: #058d0c;
+  padding: 0.2rem 0.625rem;
+  border-radius: 4px;
+}
+
+.eth-mainnet .icon {
+  width: 3rem;
+  height: 2rem;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.buy .icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.buy .icons .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: #27272730;
+  border-radius: 50%;
+}
+
+.buy-on-btn {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  padding: 0.625rem 1.2rem;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s linear;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.buy-on-btn:hover {
+  cursor: pointer;
+
+  transform: translateY(-0.25rem);
+}
+
+.buy-on-btn .icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  background-color: #27272730;
+  border-radius: 50%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================
+FAQ STYLING
+=================================*/
+.faq {
+  padding-block: 6rem;
+}
+.faq .section-title {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.faq-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-block: 4rem;
+}
+
+.faq-question {
+  flex: 1 1 45%;
+  min-width: 25rem;
+  margin-bottom: 2rem;
+}
+
+.faq-question .question-number {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.25rem;
+  font-size: 3rem;
+  color: var(--main-color);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.faq-question .question-number::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border: 1px solid white;
+}
+
+.faq-question .question-number::after {
+  content: "";
+  position: absolute;
+  right: -450%;
+  width: 400%;
+  height: 1px;
+  background-color: white;
+}
+
+.faq-question .question {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.faq-question .answer {
+  color: #eee;
+  line-height: 1.5rem;
+}
+
+/* ================================
+WhyChooseUs STYLING
+================================ */
+.why-choose-us {
+  text-align: center;
+}
+.why-choose-us h2 {
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  letter-spacing: 3px;
+}
+.why-choose-us h4 {
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.why-choose-us h4::before {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 155px;
+  height: 2px;
+  width: 80px;
+  background: #e5e5e5;
+  margin: 0 auto 0;
+}
+.why-choose-us h4::after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  left: 155px;
+  height: 2px;
+  width: 50px;
+  background: #e5e5e5;
+  margin: 0 auto 0;
+}
+.why-choose-us .content {
+  max-width: 700px;
+  margin: auto;
+  padding: 50px 0;
+}
+.why-choose-us p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "poppins", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+/* ================================
+ServiceArea STYLING
+================================ */
+.service-area {
+  padding: 100px 0;
+}
+.section-title {
+  text-align: center;
+}
+.sub-title h5 {
+  font-family: poppins;
+  text-transform: uppercase;
+}
+.sub-title h5::before {
+  position: absolute;
+  content: "";
+  top: 11px;
+  left: 0;
+  height: 1px;
+  width: 66px;
+  background-image: linear-gradient(to right, #020a1f, #c1c1c1);
+}
+.sub-title h5::after {
+  position: absolute;
+  content: "";
+  top: 11px;
+  right: 0;
+  height: 1px;
+  width: 66px;
+  background-image: linear-gradient(to right, #c1c1c1, #020a1f);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.sub-title {
+  max-width: 228px;
+  margin: auto;
+  position: relative;
+}
+.main-title h3 {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 0;
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+}
+.main-title p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: poppins;
+  text-align: center;
+  width: 64%;
+  margin: auto;
+  padding-bottom: 50px;
+  line-height: 1.5;
+}
+.service-area .single-service-box {
+  width: 630px;
+  margin: auto;
+  background: #000616;
+  padding: 40px 2px 22px;
+  margin: 0 0 30px;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.5s;
+  line-height: 1.5;
+  z-index: 1;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.service-area .service-boxs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.service-area .single-service-box::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  right: 0;
+  height: 50px;
+  width: 50px;
+  background: #e5e5e5;
+  border-radius: 45px 0 0 0;
+  transition: 0.5s;
+  z-index: -1;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-border-radius: 45px 0 0 0;
+  -moz-border-radius: 45px 0 0 0;
+  -ms-border-radius: 45px 0 0 0;
+  -o-border-radius: 45px 0 0 0;
+}
+.service-area .single-service-box:hover::before {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  border-radius: inherit;
+}
+.service-area .service-img {
+  font-size: 40px;
+  color: #e5e5e5;
+  text-align: center;
+}
+.service-area .service-img img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-style: none;
+}
+.service-area .service-title h3 {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 15px 0 0;
+  letter-spacing: 3px;
+}
+.service-area .service-title > p {
+  padding: 0px 20px;
+}
+
+.service-area .service-title p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins";
+  text-align: center;
+  color: #fffff1;
+}
+/* ================================
+RoadmapSection STYLING
+================================ */
+.road-map-area {
+  padding-bottom: 100px;
+}
+.road-map-area .map {
+  position: relative;
+  z-index: 1;
+}
+.road-map-box {
+  max-width: 500px;
+  border: 1px solid #252b39;
+  padding: 25px 30px;
+  border-radius: 5px;
+  margin-right: 30px;
+  position: relative;
+  background: #000;
+  transition: 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: auto;
+}
+.road-map-title h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+}
+.road-map-title span {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.road-map-title p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins";
+  line-height: 1.5;
+  margin: 0;
+  padding-top: 15px;
+}
+.road-button-box123 {
+  height: 400px;
+  justify-content: end;
+}
+
+.road-map-box:hover {
+  border: 1px solid #e5e5e5;
+}
+.road-button-box {
+  display: flex;
+  align-items: center;
+}
+/* ================================
+FOOTER STYLING
+================================ */
+footer {
+  border-top: 1px solid white;
+  padding: 2rem;
+  text-align: center;
+}
+/* ================================
+MEDIA QUERIES
+================================ */
+@media screen and (max-width: 1000px) {
+  .hero-content {
+    width: calc(100% + 2px);
+    border: 1px solid white;
+    bottom: 0;
+    right: -1px;
+    transform: translateY(80%);
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-content p {
+    max-width: initial;
+  }
+
+  .about-content h1 {
+    margin-top: 10rem;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .about-content .about-img {
+    width: 90%;
+  }
+
+  .faq-question .question {
+    font-size: 2rem;
+  }
+  .service-area .single-service-box {
+    width: 90%;
+  }
+  .why-choose-us h4::before,
+  .why-choose-us h4::after {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  .hero {
+    min-height: 45vh;
+  }
+
+  .eth-mainnet-container > div {
+    min-width: initial;
+  }
+
+  .faq-question .question-number::after {
+    right: -250% !important;
+    width: 200% !important;
+  }
+  .faq-question {
+    min-width: initial;
+  }
+
+  .mint-grid {
+    gap: 4rem;
+  }
+
+  .mint-content p {
+    padding-right: 0;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 24rem) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .faq {
+    overflow: hidden;
+  }
+
+  .faq-question .question {
+    font-size: 1.5rem;
+  }
+
+  .mint-grid > div {
+    min-width: initial;
+  }
+
+  .mint-content p {
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1350px) {
+  .menu-button {
+    display: none;
+  }
+  .logo {
+    height: 60px;
+  }
+}
+/* counter */
+.counter {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.25rem;
+  font-size: 3rem;
+  color: var(--main-color);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 10px;
+}
+.counter::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+
+  top: -10%;
+  left: -10%;
+}
+.counterholder {
+  margin-top: 1em;
+}
