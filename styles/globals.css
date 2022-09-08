@@ -8,7 +8,7 @@ VARIABLES
   --main-color: #000;
 }
 @font-face {
-  font-family: "Gang of Three", sans-serif;
+  font-family: "Gang of Three";
   src: url("http://fonts.cdnfonts.com/css/gang-of-three");
   font-style: medium;
   font-weight: normal;
