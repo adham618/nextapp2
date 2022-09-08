@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Readex+Pro:wght@300;400;500;600;700&display=swap");
 @import url("http://fonts.cdnfonts.com/css/gang-of-three");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-@font-face {
-  /* font-family: "Fengardo Neue"; */
-  font-family: "Gang of Three", sans-serif;
-  /* src: url("/fonts/FengardoNeue_Black.otf"); */
-  src: url("/fonts/go3v2.ttf");
-}
 /*========================================
 VARIABLES
 ========================================*/
